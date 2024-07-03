@@ -18,7 +18,7 @@ public class AccountSpecification {
 
         search = search.trim();
 
-        CustomSpecification name = new CustomSpecification("username1", search);
+        CustomSpecification name = new CustomSpecification("username", search);
 
         return Specification.where(name);
     }
@@ -36,7 +36,7 @@ class CustomSpecification implements Specification<Account> {
                                  CriteriaQuery<?> query,
                                  CriteriaBuilder criteriaBuilder) {
 
-        if (field.equalsIgnoreCase("username1")) {
+        if (field.equalsIgnoreCase("username")) {
             return criteriaBuilder.like(root.get("username"), "%" + value.toString() + "%" );
         }
 
