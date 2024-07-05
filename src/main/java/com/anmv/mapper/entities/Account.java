@@ -21,3 +21,4 @@ public class Account {
     @JoinColumn(name = "department_id")
     private Department department;
 }
+

@@ -30,7 +30,7 @@ public class Department {
     @Convert(converter = DepartmentTypeConverter.class)
     private Type type;
 
-    @Column(name = "create_date")
+    @Column(name = "create_date", updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
     @CreationTimestamp
     private Date createDate;

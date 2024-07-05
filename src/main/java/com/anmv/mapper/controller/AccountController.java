@@ -2,6 +2,7 @@ package com.anmv.mapper.controller;
 
 import com.anmv.mapper.entities.Account;
 import com.anmv.mapper.entities.dto.AccountDTO;
+import com.anmv.mapper.entities.form.CreateAccountForm;
 import com.anmv.mapper.service.IAccountService;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
@@ -48,5 +49,10 @@ public class AccountController {
     @GetMapping(value = "/{id}")
     public Account getAccountById(@PathVariable(name = "id") int id){
         return service.getAccountById(id);
+    }
+
+    @PostMapping
+    public void createAccount(@RequestBody CreateAccountForm form){
+        service.createAccount(form);
     }
 }
